@@ -88,10 +88,24 @@ ___
 ____  
 ## Results  
 ![](https://github.com/TachibanaYoshino/AnimeGANv2/blob/master/AnimeGANv2.png)   
-     
-____ 
-:heart_eyes:  Photo  to  Paprika  Style  
-  
+
+## 用法
+### 1.推理
+##### python test.py --checkpoint_dir checkpoint/generator_Hayao_weight --test_dir dataset/test/HR_photo --save_dir Hayao/HR_photo
+### 2.将视频转换为动画
+##### python video2anime.py --video video/input/お花見.mp4 --checkpoint_dir checkpoint/generator_Hayao_weight --output video/output
+### 3. 训练
+#### 下载 vgg19
+##### https://github.com/TachibanaYoshino/AnimeGAN/releases/tag/vgg16%2F19.npy
+#### 下载数据集
+##### https://github.com/TachibanaYoshino/AnimeGAN/releases/tag/dataset-1
+#### 边缘平滑
+##### python edge_smooth.py --dataset Hayao --img_size 256
+#### 训练
+##### python train.py --dataset Hayao --epoch 101 --init_epoch 10
+#### 提取生成器的权重
+##### python get_generator_ckpt.py --checkpoint_dir ../checkpoint/AnimeGANv2_Shinkai_lsgan_300_300_1_2_10_1 -
+
 ![](https://github.com/TachibanaYoshino/AnimeGANv2/blob/master/results/Paprika/concat/37.jpg)   
 ![](https://github.com/TachibanaYoshino/AnimeGANv2/blob/master/results/Paprika/concat/38.jpg)     
 ![](https://github.com/TachibanaYoshino/AnimeGANv2/blob/master/results/Paprika/concat/6.jpg)  
